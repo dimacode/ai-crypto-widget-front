@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как встроить Crypto Widget</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    h1, h2 {
+      color: #333;
+    }
+    
+    .code-block {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 15px 0;
+      border-left: 4px solid #4CAF50;
+    }
+    
+    .options-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    .options-table th, .options-table td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    
+    .options-table th {
+      background-color: #f2f2f2;
+    }
+    
+    .demo-section {
+      border: 1px dashed #ccc;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Как встроить Crypto Widget на ваш сайт</h1>
+  
+  <h2>Способ 1: Автоматическое встраивание</h2>
+  <p>Просто добавьте следующий код в секцию &lt;head&gt; вашего сайта:</p>
+  <div class="code-block">
+    <pre><code>&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;</code></pre>
+  </div>
+  <p>Виджет будет автоматически добавлен в конец &lt;body&gt; вашей страницы.</p>
+  
+  <h2>Способ 2: Размещение в конкретном месте</h2>
+  <p>Добавьте скрипт в &lt;head&gt; и разместите тег виджета в нужном месте:</p>
+  <div class="code-block">
+    <pre><code>&lt;!-- В секции head --&gt;
+&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
+
+&lt;!-- В нужном месте страницы --&gt;
+&lt;crypto-widget&gt;&lt;/crypto-widget&gt;</code></pre>
+  </div>
+  
+  <h2>Способ 3: Программное добавление</h2>
+  <p>Вы также можете программно создать и добавить виджет в любом месте страницы:</p>
+  <div class="code-block">
+    <pre><code>&lt;!-- В секции head --&gt;
+&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
+
+&lt;!-- Ваш JavaScript код --&gt;
+&lt;script&gt;
+  // Дождитесь загрузки DOM
+  document.addEventListener('DOMContentLoaded', function() {
+    // Создаем контейнер для виджета
+    const container = document.getElementById('crypto-widget-container');
+    
+    // Создаем элемент виджета
+    const widget = document.createElement('crypto-widget');
+    
+    // Добавляем виджет в контейнер
+    container.appendChild(widget);
+  });
+&lt;/script&gt;
+
+&lt;!-- В нужном месте страницы --&gt;
+&lt;div id="crypto-widget-container"&gt;&lt;/div&gt;</code></pre>
+  </div>
+  
+  <h2>Демонстрация</h2>
+  <div class="demo-section">
+    <crypto-widget></crypto-widget>
+  </div>
+</body>
+</html> 

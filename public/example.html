@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Widget Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .widget-container {
+      border: 1px dashed #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    .info {
+      background-color: #f8f8f8;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 3px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Crypto Widget Demo Page</h1>
+    <p>Тестовая страница для демонстрации виджета криптовалют</p>
+  </header>
+  
+  <div class="content">
+    <div class="widget-container">
+      <h2>Виджет добавлен вручную:</h2>
+      <crypto-widget></crypto-widget>
+    </div>
+    
+    <div class="info">
+      <h2>Как использовать:</h2>
+      <p>Просто добавьте скрипт на вашу страницу:</p>
+      <pre>&lt;script src="widget.js"&gt;&lt;/script&gt;</pre>
+      
+      <p>Или разместите элемент виджета в конкретном месте:</p>
+      <pre>&lt;crypto-widget&gt;&lt;/crypto-widget&gt;</pre>
+    </div>
+  </div>
+  
+  <script src="widget.js"></script>
+</body>
+</html> 
