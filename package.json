@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run copy-examples",
+    "build": "npm run update-styles && tsc -b && vite build && npm run copy-examples",
     "lint": "eslint .",
     "preview": "vite preview",
-    "copy-examples": "cp public/example.html dist/ && cp public/embed.html dist/"
+    "copy-examples": "cp public/example.html dist/ && cp public/embed.html dist/",
+    "update-styles": "node src/style-extractor.cjs"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -23,6 +24,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "sass": "^1.86.3",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",

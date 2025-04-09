@@ -5,41 +5,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+// Basic styles still needed
+import './App.scss';
 import './index.css';
+// Import our new style injector
+import { injectComponentStyles } from './style-injector';
 
 class CryptoWidget extends HTMLElement {
   constructor() {
     super();
-    // Создаем Shadow DOM
-    this.attachShadow({ mode: 'open' });
+    // No longer using Shadow DOM
   }
 
   connectedCallback() {
+    // Inject component styles directly
+    injectComponentStyles();
+    
+    // Add stylesheet link if it doesn't exist yet
+    const styleId = 'crypto-widget-styles';
+    if (!document.getElementById(styleId)) {
+      // Get all stylesheet links from the build
+      const stylesheets = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+        .map(link => link.getAttribute('href'))
+        .filter((href): href is string => href !== null && href.includes('style-'));
+
+      if (stylesheets.length > 0) {
+        const styleLink = document.createElement('link');
+        styleLink.id = styleId;
+        styleLink.rel = 'stylesheet';
+        styleLink.href = stylesheets[0];
+        document.head.appendChild(styleLink);
+      }
+    }
+
     // Создаем контейнер для React приложения
     const mountPoint = document.createElement('div');
     mountPoint.id = 'crypto-widget-root';
-    
-    // Стили изолированы внутри Shadow DOM
-    const styles = document.createElement('style');
-    styles.textContent = `
-      #crypto-widget-root {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        width: 100%;
-        height: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 16px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-      }
+    mountPoint.style.cssText = `
+      font-family: system-ui, -apple-system, sans-serif;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: 100px;
+      z-index: 1000;
     `;
     
-    // Добавляем элементы в Shadow DOM
-    this.shadowRoot?.appendChild(styles);
-    this.shadowRoot?.appendChild(mountPoint);
+    // Добавляем элементы напрямую в DOM
+    this.appendChild(mountPoint);
     
-    // Рендерим React приложение в Shadow DOM
+    // Рендерим React приложение
     const root = ReactDOM.createRoot(mountPoint);
     root.render(
       React.createElement(React.StrictMode, null, 

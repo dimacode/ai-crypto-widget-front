@@ -7,18 +7,25 @@ export default defineConfig({
   build: {
     target: 'es2015',
     minify: true,
-    cssCodeSplit: false,
+    // Extract CSS to separate files for explicit loading
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         entryFileNames: 'widget.js',
+        assetFileNames: 'widget-[name]-[hash][extname]',
         format: 'iife',
-        // Не используем витинлайн файлы
       },
+      // Make sure styles are included in the output
+      preserveEntrySignatures: false,
     },
     // Отключаем генерацию HTML файла
     manifest: true,
     emptyOutDir: false,
     outDir: 'dist',
     assetsDir: './',
+  },
+  css: {
+    // Process CSS properly
+    devSourcemap: true,
   },
 })

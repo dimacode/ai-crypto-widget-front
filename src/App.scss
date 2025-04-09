@@ -1,0 +1,29 @@
+@use './variables' as v;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.crypto-widget {
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  color: v.$text-color;
+}
+
+.test {
+  color: red;
+  background-color: black;
+  font-size: 20px;
+}
+
+.test_2 {
+  color: blue;
+  background-color: green;
+  font-size: 20px;
+}
+
