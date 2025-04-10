@@ -2,7 +2,7 @@
 export function createWidgetStyles() {
   // Базовые стили для контейнера виджета
   const containerStyles = `
-    #crypto-widget-root {
+    #ai-crypto-widget-root {
       font-family: system-ui, -apple-system, sans-serif;
       position: fixed;
       bottom: 20px;
@@ -14,7 +14,7 @@ export function createWidgetStyles() {
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       background-color: #fff;
-      z-index: 1000;
+      z-index: 5000;
     }
   `;
 
@@ -27,24 +27,21 @@ export function createWidgetStyles() {
       text-align: center;
     }
     
-    .crypto-widget {
+    .ai-crypto-w {
       font-family: system-ui, -apple-system, sans-serif;
-      max-width: 400px;
-      margin: 0 auto;
-      text-align: left;
-      color: #333text-color;
-    }
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 50px;
+      height: 50px;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      transition: all 0.3s ease;
     
-    .test {
-      color: red;
-      background-color: black;
-      font-size: 20px;
-    }
-    
-    .test_2 {
-      color: blue;
-      background-color: green;
-      font-size: 20px;
+      &__is-open {
+        width: 600px;
+        height: 600px;
+      }
     }
   `;
 

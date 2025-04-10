@@ -22,7 +22,7 @@ class CryptoWidget extends HTMLElement {
     injectComponentStyles();
     
     // Add stylesheet link if it doesn't exist yet
-    const styleId = 'crypto-widget-styles';
+    const styleId = 'ai-crypto-widget-styles';
     if (!document.getElementById(styleId)) {
       // Get all stylesheet links from the build
       const stylesheets = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
@@ -40,14 +40,14 @@ class CryptoWidget extends HTMLElement {
 
     // Создаем контейнер для React приложения
     const mountPoint = document.createElement('div');
-    mountPoint.id = 'crypto-widget-root';
+    mountPoint.id = 'ai-crypto-widget-root';
     mountPoint.style.cssText = `
       font-family: system-ui, -apple-system, sans-serif;
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 100px;
-      height: 100px;
+      width: 50px;
+      height: 50px;
       z-index: 1000;
     `;
     
