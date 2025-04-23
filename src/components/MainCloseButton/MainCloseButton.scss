@@ -1,0 +1,33 @@
+.ai-crypto-w__button-close {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 100;
+  background-color: #F6F9FF;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.ai-crypto-w__button-close::before,
+.ai-crypto-w__button-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: #ff9800;
+  transform-origin: center;
+}
+
+.ai-crypto-w__button-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ai-crypto-w__button-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}

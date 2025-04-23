@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import './App.scss'
-import WidgetOpenButton from './components/WidgetOpenButton/WidgetOpenButton';
-import WidgetBody from './components/WidgetBody/WidgetBody';
+import MainOpenButton from './components/MainOpenButton/MainOpenButton';
+import WidgetBody from './common/WidgetBody/WidgetBody';
 // import Whale from './components/Whale/Whale';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={`ai-crypto-w ${isOpen ? 'ai-crypto-w__is-open' : ''}`}>
-      <WidgetOpenButton isOpen={isOpen} setIsOpen={setIsOpen} />
-      <WidgetBody isOpen={isOpen} />
+      <MainOpenButton  isOpen={isOpen} setIsOpen={setIsOpen} />
+      <WidgetBody isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   )
 }

@@ -1,0 +1,87 @@
+.ai-crypto-w__navbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 11px;
+  padding: 10px 15px 0px;
+}
+
+.ai-crypto-w__navbar-button {
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #636465;
+  background-color: #f7f9fc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #476070;
+  gap: 7px;
+  cursor: pointer;
+
+  svg {
+    height: auto;
+    width: 16px;
+  }
+
+  // i {
+  //   width: 7px;
+  //   height: 7px;
+  //   border-radius: 50%;
+  //   background-color: #636465;
+  // }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.ai-crypto-w__navbar-button--whale {
+  svg {
+    fill: #ff9800;
+  }
+}
+.ai-crypto-w__navbar-button--whale.ai-crypto-w__navbar-button--active {
+  background-color: #ff9800;
+  svg {
+    fill: white;
+  }
+}
+
+.ai-crypto-w__navbar-button--smart {
+  svg path {
+    fill: #54dcd9;
+  }
+}
+.ai-crypto-w__navbar-button--smart.ai-crypto-w__navbar-button--active {
+  background-color: #54dcd9;
+  svg path {
+    fill: white;
+  }
+}
+
+.ai-crypto-w__navbar-button--investments {
+  svg {
+    fill: #9271F2;
+  }
+}
+.ai-crypto-w__navbar-button--investments.ai-crypto-w__navbar-button--active {
+  background-color: #9271F2;
+  svg {
+    fill: white;
+  }
+}
+
+
+.ai-crypto-w__navbar-button--active {
+  color: white;
+  // i {
+  //   background-color: #ff9800;
+  // }
+}
+

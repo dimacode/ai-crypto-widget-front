@@ -1,0 +1,118 @@
+.ai-crypto-w_deals-transaction {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px #0000001a;
+  font-family: Poppins, sans-serif;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// .ai-crypto-w_deals-transaction--open {
+//   border-left: 3px solid #00c853;
+// }
+
+// .ai-crypto-w_deals-transaction--closed {
+//   border-left: 3px solid #546e7a;
+// }
+
+.ai-crypto-w_deals-transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ai-crypto-w_deals-transaction-pair {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1b2737;
+}
+
+.ai-crypto-w_deals-transaction-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.ai-crypto-w_deals-transaction-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-crypto-w_deals-transaction-side {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.ai-crypto-w_deals-transaction-side--long {
+  background-color: rgba(0, 200, 83, 0.15);
+  color: #00c853;
+}
+
+.ai-crypto-w_deals-transaction-side--short {
+  background-color: rgba(232, 87, 87, 0.15);
+  color: #e85757;
+}
+
+.ai-crypto-w_deals-transaction-status {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.ai-crypto-w_deals-transaction-body {
+  display: flex;
+  gap: 24px;
+}
+
+.ai-crypto-w_deals-transaction-col {
+  flex: 1;
+}
+
+.ai-crypto-w_deals-transaction-label {
+  font-size: 12px;
+  color: #546e7a;
+  margin-bottom: 4px;
+}
+
+.ai-crypto-w_deals-transaction-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1b2737;
+  margin-bottom: 12px;
+}
+
+.ai-crypto-w_deals-transaction-profit {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+} 
+
+.ai-crypto-w_deals-transaction-profit--positive {
+  background-color: rgba(0, 200, 83, 0.15);
+  color: #00c853;
+}
+
+.ai-crypto-w_deals-transaction-profit--negative {
+  background-color: rgba(232, 87, 87, 0.15);
+  color: #e85757;
+}
+

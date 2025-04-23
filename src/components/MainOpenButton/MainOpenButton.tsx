@@ -1,6 +1,6 @@
-import './WidgetOpenButton.scss';
+import './MainOpenButton.scss';
 
-export default function WidgetOpenButton({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (isOpen: boolean) => void }) {
+export default function MainOpenButton({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (isOpen: boolean) => void }) {
   return (
     <button className={`ai-crypto-w__button-open ${isOpen ? 'ai-crypto-w__button-open_is-open' : ''}`} onClick={() => setIsOpen(true)}>
       <img 

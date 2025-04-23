@@ -20,6 +20,9 @@ export function createWidgetStyles() {
 
   // Стили из App.scss, перенесенные для использования внутри Shadow DOM
   const appStyles = `
+    // @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    
     #root {
       max-width: 1280px;
       margin: 0 auto;
@@ -28,19 +31,24 @@ export function createWidgetStyles() {
     }
     
     .ai-crypto-w {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: "Poppins", sans-serif;
+      color: #636465;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
       position: absolute;
       bottom: 0px;
       right: 0px;
       width: 50px;
       height: 50px;
-      background-color: #f7f7f7;
+      background-color: white;
+      box-shadow: 0 0 10px #e1e1e1;
       border-radius: 5px;
       transition: all 0.3s ease;
     
       &__is-open {
-        width: 600px;
-        height: 600px;
+        width: 500px;
+        height: 500px;
       }
     }
   `;

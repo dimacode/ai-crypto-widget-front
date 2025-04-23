@@ -1,0 +1,27 @@
+.ai-crypto-w__ai-invest {
+
+}
+
+.ai-crypto-w__ai-invest-under-construction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  text-align: center;
+
+  svg path {
+    fill: #9271f2;
+  }
+
+  h1 {
+    padding-top: 23px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  h2 {
+    font-size: 21px;
+    padding-top: 10px;
+  }
+}
