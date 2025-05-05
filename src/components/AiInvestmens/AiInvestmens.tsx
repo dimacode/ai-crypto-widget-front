@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import './AiInvestmens.scss';
+
+import UserProfile from './userProfile';
 
 const IconAiInvest = () => (<svg xmlns="http://www.w3.org/2000/svg" width="64pt" height="64pt" viewBox="0 0 22.577778 22.577778" version="1.1" id="svg831" inkscape:export-filename="/media/taufikramadhan/Data/Tr Design Studio/Project Design/TR Creative Design/Icon Design/Project Hiring/Icon Icons/026 - Science And Technology/5 - Send/2 - Solid/29 - Artificial Intellegent.png" inkscape:export-xdpi="576" inkscape:export-ydpi="576">
   <defs id="defs825">
@@ -27,14 +30,126 @@ const IconAiInvest = () => (<svg xmlns="http://www.w3.org/2000/svg" width="64pt"
   </g>
 </svg>);
 
+// Feature card component
+const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+  <div className="ai-crypto-w__ai-invest-feature">
+    <div className="ai-crypto-w__ai-invest-feature-icon">{icon}</div>
+    <div className="ai-crypto-w__ai-invest-feature-content">
+      <h3 className="ai-crypto-w__ai-invest-feature-title">{title}</h3>
+      <p className="ai-crypto-w__ai-invest-feature-description">{description}</p>
+    </div>
+  </div>
+);
+
+// Stat item component
+const StatItem = ({ label, value, color }: { label: string, value: string, color?: string }) => (
+  <div className="ai-crypto-w__ai-invest-stat">
+    <div className="ai-crypto-w__ai-invest-stat-value" style={{ color }}>
+      {value}
+    </div>
+    <div className="ai-crypto-w__ai-invest-stat-label">
+      {label}
+    </div>
+  </div>
+);
+
 export default function AiInvestmens() {
+  const [isLogin, setIsLogin] = useState(false); 
+  // const [isFormVisible, setIsFormVisible] = useState(false);
+
   return (
     <div className="ai-crypto-w__ai-invest">
-      <div className="ai-crypto-w__ai-invest-under-construction">
-        <IconAiInvest />
-        <h1>We're working hard to bring you this section.</h1>
-        <h2>Please check back soon!</h2>
-      </div>
+      {isLogin 
+        ? <UserProfile />
+        : <><div className="ai-crypto-w__ai-invest-header">
+            <div className="ai-crypto-w__ai-invest-icon">
+              <IconAiInvest />
+            </div>
+            <div className="ai-crypto-w__ai-invest-title">
+              <h2>AI Trading System</h2>
+              <p>Our AI system identifies wallets with successful trade history and automatically mirrors their orders. Simply fund your account and let the AI handle the rest.</p>
+            </div>
+          </div>
+
+          <div className="ai-crypto-w__ai-invest-stats">
+            <StatItem label="Success Rate" value="78%" color="#2ed573" />
+            <StatItem label="Average ROI" value="21.4%" color="#2ed573" />
+            <StatItem label="Active Traders" value="384" />
+            <StatItem label="Total Volume" value="$5.8M" />
+          </div>
+
+          <div className="ai-crypto-w__ai-invest-features">
+            <FeatureCard
+              icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#9271f2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#9271f2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#9271f2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>}
+              title="Smart Wallets Analysis"
+              description="AI algorithms analyze thousands of wallets to find the most profitable trading patterns"
+            />
+            <FeatureCard
+              icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12H18L15 21L9 3L6 12H2" stroke="#9271f2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>}
+              title="Real-time Trading"
+              description="Orders are mirrored in real-time with minimal delay for maximum profit potential"
+            />
+            <FeatureCard
+              icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#9271f2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 6V12L16 14" stroke="#9271f2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>}
+              title="24/7 Automated"
+              description="The system works around the clock to catch opportunities in any market condition"
+            />
+          </div>
+
+          <div className="ai-crypto-w__ai-invest-cta">
+            <button 
+              className="ai-crypto-w__ai-invest-button ai-crypto-w__ai-invest-button-login"
+              onClick={() => setIsLogin(true)}
+              // onClick={() => setIsFormVisible(true)}
+            >
+              Login
+            </button>
+            <button 
+              className="ai-crypto-w__ai-invest-button ai-crypto-w__ai-invest-button-register"
+              onClick={() => setIsLogin(true)}
+              // onClick={() => setIsFormVisible(true)}
+            >
+              Register
+            </button>
+          </div>
+
+
+
+        </>}
     </div>
   );
 }
+
+
+  /* {isFormVisible ? (
+    <div className="ai-crypto-w__ai-invest-form">
+      <div className="ai-crypto-w__ai-invest-form-header">
+        <h3>Start AI Trading</h3>
+        <p>Enter your investment amount to begin</p>
+      </div>
+      <div className="ai-crypto-w__ai-invest-form-group">
+        <label>Investment Amount (USDT)</label>
+        <input type="number" placeholder="Min. 100 USDT" min="100" />
+      </div>
+      <div className="ai-crypto-w__ai-invest-form-actions">
+        <button className="ai-crypto-w__ai-invest-form-submit">Start Trading</button>
+        <button 
+          className="ai-crypto-w__ai-invest-form-cancel"
+          onClick={() => setIsFormVisible(false)}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  ) : (
+    
+  )} */

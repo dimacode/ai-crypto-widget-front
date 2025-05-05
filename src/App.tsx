@@ -1,16 +1,22 @@
 import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './App.scss'
 import MainOpenButton from './components/MainOpenButton/MainOpenButton';
 import WidgetBody from './common/WidgetBody/WidgetBody';
-// import Whale from './components/Whale/Whale';
+
+// Создаем экземпляр QueryClient
+const queryClient = new QueryClient();
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className={`ai-crypto-w ${isOpen ? 'ai-crypto-w__is-open' : ''}`}>
-      <MainOpenButton  isOpen={isOpen} setIsOpen={setIsOpen} />
-      <WidgetBody isOpen={isOpen} setIsOpen={setIsOpen} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={`ai-crypto-w ${isOpen ? 'ai-crypto-w__is-open' : ''}`}>
+        <MainOpenButton  isOpen={isOpen} setIsOpen={setIsOpen} />
+        <WidgetBody isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
+    </QueryClientProvider>
   )
 }
 

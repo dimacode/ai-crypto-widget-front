@@ -1,5 +1,28 @@
 .ai-crypto-w_smart-deals {
-  padding: 0px 15px 10px;
+  flex: 1;
+  padding: 0 10px 10px 15px;
+  margin-right: 5px;
+  max-height: 533px;
+  overflow-y: auto;
+
+  /* Custom scrollbar for webkit browsers */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c4c9d0;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a8aeb6;
+  }
 
   h2 {
     font-family: Poppins, sans-serif;
@@ -20,27 +43,202 @@
   }
 }
 
+.ai-crypto-w_smart-deals-stats {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 8px 10px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+  &-header {
+    margin-bottom: 16px;
+    
+    h4 {
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1b2737;
+      margin: 0 0 5px 0;
+      line-height: 1.2;
+    }
+    
+    p {
+      font-family: Poppins, sans-serif;
+      font-size: 12px;
+      color: #4e5c68;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+  
+  &-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  
+  &-total {
+    display: flex;
+    align-items: baseline;
+    
+    .ai-crypto-w_smart-deals-stats-number {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1b2737;
+      margin-right: 6px;
+    }
+    
+    .ai-crypto-w_smart-deals-stats-text {
+      font-size: 13px;
+      color: #4e5c68;
+    }
+  }
+  
+  &-ratio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  &-win, &-loss {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  
+  &-win {
+    .ai-crypto-w_smart-deals-stats-number,
+    .ai-crypto-w_smart-deals-stats-percent {
+      color: #2ed573;
+    }
+    .ai-crypto-w_smart-deals-stats-number {
+      font-size: 15px;
+    }
+    .ai-crypto-w_smart-deals-stats-percent {
+      font-size: 13px;
+    }
+  }
+  
+  &-loss {
+    .ai-crypto-w_smart-deals-stats-number,
+    .ai-crypto-w_smart-deals-stats-percent {
+      color: #ff4757;
+    }
+    .ai-crypto-w_smart-deals-stats-number {
+      font-size: 15px;
+    }
+    .ai-crypto-w_smart-deals-stats-percent {
+      font-size: 13px;
+    }
+  }
+  
+  &-number {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  &-percent {
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  &-bar {
+    display: flex;
+    height: 3px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  
+  &-win-bar {
+    height: 100%;
+    background-color: #2ed573;
+  }
+  
+  &-loss-bar {
+    height: 100%;
+    background-color: #ff4757;
+  }
+  
+  &-legend {
+    display: flex;
+    justify-content: space-between;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+  }
+  
+  &-win-legend {
+    color: #2ed573;
+    position: relative;
+    padding-left: 15px;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: #2ed573;
+      border-radius: 50%;
+    }
+  }
+  
+  &-loss-legend {
+    color: #ff4757;
+    position: relative;
+    padding-left: 15px;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: #ff4757;
+      border-radius: 50%;
+    }
+  }
+}
+
 .ai-crypto-w_smart-deals-container {
-  max-height: 260px;
-  overflow-y: auto;
-  padding: 5px 10px 0 5px;
+  // max-height: 260px;
+  // overflow-y: auto;
+  // padding: 5px 10px 0 5px;
   
-  /* Custom scrollbar for webkit browsers */
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
+  // /* Custom scrollbar for webkit browsers */
+  // &::-webkit-scrollbar {
+  //   width: 6px;
+  // }
   
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
+  // &::-webkit-scrollbar-track {
+  //   background: #f1f1f1;
+  //   border-radius: 10px;
+  // }
   
-  &::-webkit-scrollbar-thumb {
-    background: #c4c9d0;
-    border-radius: 10px;
-  }
+  // &::-webkit-scrollbar-thumb {
+  //   background: #c4c9d0;
+  //   border-radius: 10px;
+  // }
   
-  &::-webkit-scrollbar-thumb:hover {
-    background: #a8aeb6;
-  }
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #a8aeb6;
+  // }
 } 
+
+.ai-crypto-w_smart-deals-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}

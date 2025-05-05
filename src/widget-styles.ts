@@ -48,7 +48,7 @@ export function createWidgetStyles() {
     
       &__is-open {
         width: 500px;
-        height: 500px;
+        height: 700px;
       }
     }
   `;

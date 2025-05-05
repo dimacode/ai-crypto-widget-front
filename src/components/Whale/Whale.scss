@@ -1,5 +1,28 @@
 .ai-crypto-w_whale {
-  padding: 0px 15px 10px;
+  flex: 1;
+  padding: 0 10px 10px 15px;
+  margin-right: 5px;
+  max-height: 533px;
+  overflow-y: auto;
+
+  /* Custom scrollbar for webkit browsers */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c4c9d0;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a8aeb6;
+  }
 
   h2 {
     font-family: Poppins, sans-serif;
@@ -25,27 +48,17 @@
   flex-direction: column;
   gap: 10px;
   max-height: 260px;
-  overflow-y: auto;
-  padding: 5px 10px 10px 5px;
+  // overflow-y: auto;
+  // padding: 5px 10px 10px 5px;
 
-  /* Custom scrollbar for webkit browsers */
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
   
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: #c4c9d0;
-    border-radius: 10px;
-  }
-  
-  &::-webkit-scrollbar-thumb:hover {
-    background: #a8aeb6;
-  }
+}
+
+.ai-crypto-w_whale-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .ai-crypto-w_whale-alert {
@@ -66,21 +79,15 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-  
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: linear-gradient(to right, rgba(247, 249, 252, 0.5) 0%, rgba(247, 249, 252, 0) 100%);
-  //   pointer-events: none;
-  //   border-radius: 8px;
-  // }
 }
 
 .ai-crypto-w_whale-alert-token {
+  display: flex;
+  align-items: center;
+
+  .ai-crypto-w_whale-alert-token-image {
+    margin: 0px 5px 0px 0px;
+  }
   .ai-crypto-w_whale-alert-token--buy {
     font-size: 12px;
     font-weight: 600;
@@ -102,108 +109,19 @@
     color: #e85757;
     display: inline-block;
     margin: 0px 3px;
+  }
+  .ai-crypto-w_whale-alert-token--neut {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 11px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background-color: #ff980026;
+    color: #ff9800;
+    display: inline-block;
+    margin: 0px 3px;
   } 
 }
-
-// .ai-crypto-w_whale-alert-amount {
-//   b {
-//     color: #ff9800;
-//   }
-// }
-
-
-// .ai-crypto-w_whale-alert--buy {
-//   border-left-color: #00b176;
-// }
-
-// .ai-crypto-w_whale-alert--sell {
-//   border-left-color: #e85757;
-// }
-
-// .ai-crypto-w_whale-alert--buy.ai-crypto-w_whale-alert--new {
-//   animation: ai-crypto-w_whale-alert-pulse-buy 2s infinite;
-// }
-
-// .ai-crypto-w_whale-alert--sell.ai-crypto-w_whale-alert--new {
-//   animation: ai-crypto-w_whale-alert-pulse-sell 2s infinite;
-// }
-
-// .ai-crypto-w_whale-alert-token {
-//   font-size: 13px;
-//   font-weight: 600;
-//   color: #2c3e50;
-//   display: flex;
-//   align-items: center;
-// }
-
-// .ai-crypto-w_whale-alert-token--buy {
-//   &::after {
-//     content: "BUY";
-//     background-color: rgba(0, 177, 118, 0.15);
-//     color: #00b176;
-//     padding: 2px 6px;
-//     border-radius: 4px;
-//     font-size: 10px;
-//     margin-left: 8px;
-//     font-weight: 700;
-//   }
-// }
-
-// .ai-crypto-w_whale-alert-token--sell {
-//   &::after {
-//     content: "SELL";
-//     background-color: rgba(232, 87, 87, 0.15);
-//     color: #e85757;
-//     padding: 2px 6px;
-//     border-radius: 4px;
-//     font-size: 10px;
-//     margin-left: 8px;
-//     font-weight: 700;
-//   }
-// }
-
-// .ai-crypto-w_whale-alert-amount {
-//   font-size: 12px;
-//   font-weight: 500;
-// }
-
-// .ai-crypto-w_whale-alert-amount--buy {
-//   color: #00b176;
-// }
-
-// .ai-crypto-w_whale-alert-amount--sell {
-//   color: #e85757;
-// }
-
-// .ai-crypto-w_whale-alert-deal-price {
-//   font-size: 12px;
-//   font-weight: 400;
-//   color: #546e7a;
-//   display: flex;
-//   align-items: center;
-  
-//   &::before {
-//     content: "$";
-//     margin-right: 2px;
-//     opacity: 0.5;
-//   }
-// }
-
-// .ai-crypto-w_whale-alert-last-alert {
-//   font-size: 11px;
-//   font-weight: 400;
-//   color: #7f8c8d;
-//   margin-top: 2px;
-  
-//   &::before {
-//     content: "•";
-//     margin-right: 5px;
-//     opacity: 0.5;
-//   }
-// }
-
-
-
 
 
 

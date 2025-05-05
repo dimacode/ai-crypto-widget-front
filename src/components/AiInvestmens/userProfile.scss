@@ -1,0 +1,825 @@
+// Main container
+.ai-crypto-w__user-profile {
+  background-color: #ffffff;
+  border-radius: 12px;
+  // padding: 24px;
+  color: #333;
+  width: 100%;
+  // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+// Header section
+.ai-crypto-w__user-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0px;
+}
+
+.ai-crypto-w__user-profile-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #222;
+}
+
+// Action buttons
+.ai-crypto-w__user-profile-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.ai-crypto-w__user-profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.ai-crypto-w__user-profile-btn-deposit {
+  background-color: #9271f2;
+  color: white;
+}
+
+.ai-crypto-w__user-profile-btn-deposit:hover {
+  background-color: #7a5adf;
+}
+
+.ai-crypto-w__user-profile-btn-withdraw {
+  background-color: transparent;
+  border: 1px solid #9271f2;
+  color: #9271f2;
+}
+
+.ai-crypto-w__user-profile-btn-withdraw:hover {
+  background-color: rgba(146, 113, 242, 0.1);
+}
+
+.ai-crypto-w__user-profile-btn-confirm {
+  background-color: #9271f2;
+  color: white;
+}
+
+.ai-crypto-w__user-profile-btn-confirm:hover {
+  background-color: #7a5adf;
+}
+
+.ai-crypto-w__user-profile-btn-cancel {
+  background-color: transparent;
+  border: 1px solid #9271f2;
+  color: #9271f2;
+}
+
+.ai-crypto-w__user-profile-btn-cancel:hover {
+  background-color: rgba(146, 113, 242, 0.1);
+}
+
+// Balance section
+.ai-crypto-w__user-profile-balance {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 8px #0000001a;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 0 24px;
+}
+
+.ai-crypto-w__user-profile-balance-header {
+  margin-bottom: 16px;
+}
+
+.ai-crypto-w__user-profile-balance-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #666;
+}
+
+.ai-crypto-w__user-profile-balance-amount {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.ai-crypto-w__user-profile-balance-profit {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ai-crypto-w__user-profile-balance-profit.positive {
+  color: #22c55e;
+}
+
+.ai-crypto-w__user-profile-balance-profit.negative {
+  color: #ef4444;
+}
+
+.ai-crypto-w__user-profile-balance-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.ai-crypto-w__user-profile-balance-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ai-crypto-w__user-profile-balance-info-label {
+  font-size: 12px;
+  color: #777;
+}
+
+.ai-crypto-w__user-profile-balance-info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.ai-crypto-w__user-profile-balance-info-value.active {
+  color: #22c55e;
+}
+
+.ai-crypto-w__user-profile-balance-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.ai-crypto-w__user-profile-balance-actions .ai-crypto-w__user-profile-btn {
+  flex: 1;
+  justify-content: center;
+  font-size: 14px;
+  padding: 10px 16px;
+}
+
+// Content area
+.ai-crypto-w__user-profile-content {
+  min-height: 400px;
+  padding-bottom: 16px;
+}
+
+// Statistics section
+.ai-crypto-w__user-profile-statistics {
+  margin-bottom: 32px;
+}
+
+.ai-crypto-w__user-profile-statistics h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.ai-crypto-w__user-profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ai-crypto-w__user-profile-stat-card {
+  position: relative;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  transition: all 0.2s ease;
+}
+
+.ai-crypto-w__user-profile-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ai-crypto-w__user-profile-stat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ai-crypto-w__user-profile-stat-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: rgba(146, 113, 242, 0.1);
+  color: #9271f2;
+}
+
+.ai-crypto-w__user-profile-stat-card:nth-child(2) .ai-crypto-w__user-profile-stat-card-icon {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.ai-crypto-w__user-profile-stat-card:nth-child(3) .ai-crypto-w__user-profile-stat-card-icon {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.ai-crypto-w__user-profile-stat-card:nth-child(4) .ai-crypto-w__user-profile-stat-card-icon {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.ai-crypto-w__user-profile-stat-card:nth-child(5) .ai-crypto-w__user-profile-stat-card-icon {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.ai-crypto-w__user-profile-stat-card:nth-child(6) .ai-crypto-w__user-profile-stat-card-icon {
+  background-color: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
+.ai-crypto-w__user-profile-stat-card:nth-child(7) .ai-crypto-w__user-profile-stat-card-icon {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+}
+
+.ai-crypto-w__user-profile-stat-card-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.ai-crypto-w__user-profile-stat-card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.ai-crypto-w__user-profile-stat-card-change {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ai-crypto-w__user-profile-stat-card-change.positive {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.ai-crypto-w__user-profile-stat-card-change.positive:before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  margin-right: 4px;
+}
+
+.ai-crypto-w__user-profile-stat-card-change.negative {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.ai-crypto-w__user-profile-stat-card-change.negative:before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  margin-right: 4px;
+}
+
+// Performance chart
+.ai-crypto-w__user-profile-performance {
+  margin-bottom: 32px;
+}
+
+.ai-crypto-w__user-profile-performance h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+// Recharts Chart styles
+.ai-crypto-w__user-profile-chart {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 8px #0000001a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ai-crypto-w__user-profile-chart-tooltip {
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ai-crypto-w__user-profile-chart-tooltip-value {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.ai-crypto-w__user-profile-chart-tooltip-date {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.ai-crypto-w__user-profile-chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.ai-crypto-w__user-profile-chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.ai-crypto-w__user-profile-chart-legend-color {
+  width: 12px;
+  height: 12px;
+  background-color: #9271f2;
+  border-radius: 2px;
+}
+
+.ai-crypto-w__user-profile-chart-legend-line {
+  width: 20px;
+  height: 2px;
+  background-color: #888;
+  border-radius: 1px;
+  position: relative;
+}
+
+.ai-crypto-w__user-profile-chart-legend-line:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 2px;
+  height: 8px;
+  background-color: #888;
+}
+
+.ai-crypto-w__user-profile-chart-legend-line:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 6px;
+  width: 2px;
+  height: 8px;
+  background-color: #888;
+}
+
+// Old bar chart styles - can be removed if not used elsewhere
+.ai-crypto-w__user-profile-performance-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.ai-crypto-w__user-profile-performance-bar-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9271f2;
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 0;
+  min-height: 28px;
+}
+
+.ai-crypto-w__user-profile-performance-bar-month {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+// Modal
+.ai-crypto-w__user-profile-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.ai-crypto-w__user-profile-modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.ai-crypto-w__user-profile-modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.ai-crypto-w__user-profile-modal-content p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.ai-crypto-w__user-profile-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+  padding-right: 30px;
+}
+
+.ai-crypto-w__user-profile-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #64748b;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.ai-crypto-w__user-profile-modal-close:hover {
+  background-color: #f1f5f9;
+  color: #333;
+}
+
+.ai-crypto-w__user-profile-modal-close:active {
+  transform: scale(0.95);
+}
+
+.ai-crypto-w__user-profile-modal-close svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.ai-crypto-w__user-profile-modal-form {
+  margin-bottom: 24px;
+}
+
+.ai-crypto-w__user-profile-modal-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #444;
+}
+
+.ai-crypto-w__user-profile-modal-form label input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  background-color: #f7f7f7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  color: #333;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.ai-crypto-w__user-profile-modal-form label input:focus {
+  outline: none;
+  border-color: #9271f2;
+}
+
+.ai-crypto-w__user-profile-modal-form label input::placeholder {
+  color: #999;
+}
+
+.ai-crypto-w__user-profile-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+// Deposit address
+.ai-crypto-w__user-profile-deposit-address {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.ai-crypto-w__user-profile-deposit-address p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.ai-crypto-w__user-profile-address {
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: monospace;
+  margin-bottom: 12px;
+  word-break: break-all;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.ai-crypto-w__user-profile-copy-btn {
+  background-color: transparent;
+  border: 1px solid #9271f2;
+  color: #9271f2;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ai-crypto-w__user-profile-copy-btn:hover {
+  background-color: rgba(146, 113, 242, 0.1);
+}
+
+// Statistics table
+.ai-crypto-w__user-profile-stats-table {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0000001a;
+  overflow: hidden;
+}
+
+.ai-crypto-w__user-profile-stats-table table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.ai-crypto-w__user-profile-stats-table table th,
+.ai-crypto-w__user-profile-stats-table table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ai-crypto-w__user-profile-stats-table table th {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  background-color: #f9fafb;
+}
+
+.ai-crypto-w__user-profile-stats-table table th:first-child {
+  width: 56px;
+}
+
+.ai-crypto-w__user-profile-stats-table table thead tr th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.ai-crypto-w__user-profile-stats-table table thead tr th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.ai-crypto-w__user-profile-stats-table table tr:last-child td {
+  border-bottom: none;
+}
+
+.ai-crypto-w__user-profile-stats-table table td {
+  font-size: 14px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.ai-crypto-w__user-profile-stats-table table td.icon-cell {
+  width: 56px;
+  padding-right: 0;
+}
+
+.ai-crypto-w__user-profile-stats-table table td.value-cell {
+  font-weight: 700;
+  font-size: 16px;
+  color: #111827;
+}
+
+.ai-crypto-w__user-profile-stats-table table td.change-cell {
+  width: 100px;
+}
+
+.ai-crypto-w__user-profile-stats-table table tr:hover td {
+  background-color: #f9fafb;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-purple {
+  background-color: #9271f2;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-green {
+  background-color: #22c55e;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-red {
+  background-color: #ef4444;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-yellow {
+  background-color: #f59e0b;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-blue {
+  background-color: #3b82f6;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-gray {
+  background-color: #64748b;
+}
+
+.ai-crypto-w__user-profile-stats-table .stats-icon-light-blue {
+  background-color: #0ea5e9;
+}
+
+.ai-crypto-w__user-profile-stats-table .change-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ai-crypto-w__user-profile-stats-table .change-badge.positive {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.ai-crypto-w__user-profile-stats-table .change-badge.negative {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.ai-crypto-w__user-profile-stats-table .change-badge.positive:before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  margin-right: 4px;
+}
+
+.ai-crypto-w__user-profile-stats-table .change-badge.negative:before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  margin-right: 4px;
+}
+
+// Media queries for responsive design
+@media (max-width: 992px) {
+  .ai-crypto-w__user-profile-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-crypto-w__user-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .ai-crypto-w__user-profile-actions {
+    width: 100%;
+  }
+  
+  .ai-crypto-w__user-profile-btn {
+    flex: 1;
+  }
+  
+  .ai-crypto-w__user-profile-balance-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ai-crypto-w__user-profile-chart {
+    padding: 10px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-tooltip {
+    padding: 6px 10px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-tooltip-value {
+    font-size: 12px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-tooltip-date {
+    font-size: 10px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .ai-crypto-w__user-profile-stats-table {
+    overflow-x: auto;
+  }
+  
+  .ai-crypto-w__user-profile-stats-table th,
+  .ai-crypto-w__user-profile-stats-table td {
+    padding: 10px 12px;
+  }
+  
+  .ai-crypto-w__user-profile-stats-table th:nth-child(4),
+  .ai-crypto-w__user-profile-stats-table td:nth-child(4) {
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ai-crypto-w__user-profile {
+    padding: 0;
+  }
+  
+  .ai-crypto-w__user-profile-balance-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ai-crypto-w__user-profile-chart {
+    padding: 10px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-tooltip {
+    padding: 6px 10px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-tooltip-value {
+    font-size: 12px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-tooltip-date {
+    font-size: 10px;
+  }
+  
+  .ai-crypto-w__user-profile-chart-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .ai-crypto-w__user-profile-stats-grid {
+    grid-template-columns: 1fr;
+  }
+} 

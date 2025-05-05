@@ -12,11 +12,21 @@
     "update-styles": "node src/style-extractor.cjs"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.74.4",
+    "@types/pg": "^8.11.13",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.15.1",
+    "pg-pool": "^3.9.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
