@@ -9,13 +9,14 @@ import AiInvestmens from '../../components/AiInvestmens/AiInvestmens';
 
 export default function WidgetBody({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: (isOpen: boolean) => void}) {
   const [activeTab, setActiveTab] = useState('whale');
+  const [searchCoin, setSearchCoin] = useState('');
   return (
     <div className={`ai-crypto-w__widget-body ${isOpen ? 'ai-crypto-w__widget-body_is-open' : ''}`}>
-      <Header />
+      <Header searchCoin={searchCoin} setSearchCoin={setSearchCoin} />
       <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      {activeTab === 'whale' && <Whale />}
-      {activeTab === 'smart' && <SmartDeals />}
+      {activeTab === 'whale' && <Whale searchCoin={searchCoin} />}
+      {activeTab === 'smart' && <SmartDeals searchCoin={searchCoin} />}
       {activeTab === 'investments' && <AiInvestmens />}
 
       <MainCloseButton setIsOpen={setIsOpen} />

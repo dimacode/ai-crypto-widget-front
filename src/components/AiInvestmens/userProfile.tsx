@@ -195,7 +195,7 @@ export default function UserProfile() {
                     <th></th>
                     <th>Metric</th>
                     <th>Value</th>
-                    <th>Change</th>
+                    <th>7D Changes</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -316,10 +316,6 @@ export default function UserProfile() {
                 <div className="ai-crypto-w__user-profile-chart-legend-item">
                   <div className="ai-crypto-w__user-profile-chart-legend-color"></div>
                   <span>Daily profit</span>
-                </div>
-                <div className="ai-crypto-w__user-profile-chart-legend-item">
-                  <div className="ai-crypto-w__user-profile-chart-legend-line"></div>
-                  <span>Average: {averageValue.toFixed(1)}%</span>
                 </div>
               </div>
             </div>

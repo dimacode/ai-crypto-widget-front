@@ -41,30 +41,9 @@ const Loader = () => {
   )
 }
 
-export default function Whale() {
+export default function Whale({searchCoin = ''}: {searchCoin: string}) {
   const [localData, setLocalData] = useState<WhaleData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  
-  // const localDataRef = useRef(localData);
-  // const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch('http://localhost:3000/api/whale-moves/latest');
-  //     const responseData = await response.json();
-
-  //     if (localDataRef.current.length > 0 && (localDataRef.current[localDataRef.current.length - 1]?.newUnix !== responseData?.newUnix)) {
-  //       setLocalData([...localDataRef.current, responseData]);
-  //     }
-
-  //     timeoutRef.current = setTimeout(() => {
-  //       fetchData();
-  //     }, 5000);
-  
-  //   } catch (error) {
-  //     console.error('Error fetching data:', error);
-  //   }
-  // };
 
   const getWhaleHistory = async () => {
     const response = await fetch('http://localhost:3000/api/whale-moves/history-whale-moves');
@@ -74,27 +53,21 @@ export default function Whale() {
     // fetchData();
   }
 
-  // useEffect(() => {
-  //   localDataRef.current = localData;
-  // }, [localData]);
-
   useEffect(() => {
     const interval = setInterval(() => {  
       getWhaleHistory();
     }, 5000);
 
     return () => clearInterval(interval);
-    
-    // return () => {
-    //   if (timeoutRef.current) {
-    //     clearTimeout(timeoutRef.current);
-    //   }
-    // };
   }, []);
 
-  console.log('1 localData', localData)
+  const reversedData = localData.reverse().filter(item => {
+    if (searchCoin) {
+      return item.coinName.toLowerCase().includes(searchCoin.toLowerCase());
+    }
 
-  const reversedData = localData.reverse();
+    return item;
+  });
 
   return (
     <div className="ai-crypto-w_whale">

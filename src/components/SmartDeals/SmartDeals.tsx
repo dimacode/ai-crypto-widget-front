@@ -42,10 +42,27 @@ const Loader = () => {
   )
 }
 
-export default function SmartDeals() {
+const DoubleArrow = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+      <path d="M36 12L24 24L12 12" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M36 24L24 36L12 24" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )
+}
+
+export default function SmartDeals({searchCoin = ''}: {searchCoin: string}) {
   const [ordersHistory, setOrdersHistory] = useState<SmartDeal[]>([]);
   const [ordersActive, setOrdersActive] = useState<SmartDeal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [stats, setStats] = useState({
+    total: 0,
+    win: 0,
+    loss: 0,
+    winPercent: 0,
+    lossPercent: 0
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,6 +70,23 @@ export default function SmartDeals() {
       const historyData = await historyResponse.json();
       const historyDataFormatted = ordersFormat(historyData);
       setOrdersHistory(historyDataFormatted);
+      
+      // Calculate stats
+      const total = historyDataFormatted.length;
+      const win = historyDataFormatted.filter(order => 
+        !order.isOpen && !order.isLost && parseFloat(order.roi.replace('%', '')) > 0
+      ).length;
+      const loss = total - win;
+      const winPercent = total > 0 ? Math.round((win / total) * 100) : 0;
+      const lossPercent = total > 0 ? 100 - winPercent : 0;
+      
+      setStats({
+        total,
+        win,
+        loss,
+        winPercent,
+        lossPercent
+      });
     };
     fetchData();
 
@@ -71,35 +105,63 @@ export default function SmartDeals() {
   console.log('ordersHistory', ordersHistory);
   console.log('ordersActive', ordersActive);
 
+  const ordersActiveFiltered = ordersActive.filter(item => {
+    if (searchCoin) {
+      return item.pareName.toLowerCase().includes(searchCoin.toLowerCase());
+    }
+
+    return item;
+  });
+
+  const ordersHistoryFiltered = ordersHistory.filter(item => {
+    if (searchCoin) {
+      return item.pareName.toLowerCase().includes(searchCoin.toLowerCase());
+    }
+
+    return item;
+  });
+
   return (
     <div className="ai-crypto-w_smart-deals">
       <h2>Smart Deals</h2>
       <h3>We track wallets and traders with a high success rate and publish their trades in real time. Discover proven strategies and follow the smartest moves on the market.</h3>
 
       <div className="ai-crypto-w_smart-deals-stats">
-        <div className="ai-crypto-w_smart-deals-stats-summary">
-          <div className="ai-crypto-w_smart-deals-stats-total">
-            <span className="ai-crypto-w_smart-deals-stats-number">200</span>
-            <span className="ai-crypto-w_smart-deals-stats-text">Total Deals</span>
+        <div className="ai-crypto-w_smart-deals-stats-cards">
+          <div className="ai-crypto-w_smart-deals-stats-card total">
+            <div className="card-value">{stats.total}</div>
+            <div className="card-label">Total Deals</div>
           </div>
-          <div className="ai-crypto-w_smart-deals-stats-ratio">
-            <div className="ai-crypto-w_smart-deals-stats-win">
-              <span className="ai-crypto-w_smart-deals-stats-number">128</span>
-              <span className="ai-crypto-w_smart-deals-stats-percent">64%</span>
-            </div>
-            <div className="ai-crypto-w_smart-deals-stats-loss">
-              <span className="ai-crypto-w_smart-deals-stats-number">72</span>
-              <span className="ai-crypto-w_smart-deals-stats-percent">36%</span>
-            </div>
+          <div className="ai-crypto-w_smart-deals-stats-card win">
+            <div className="card-value">{stats.win} <span>/</span> {stats.winPercent}%</div>
+            <div className="card-label">Winning Deals</div>
+            {/* <div className="card-percent">{stats.winPercent}%</div> */}
+          </div>
+          <div className="ai-crypto-w_smart-deals-stats-card loss">
+            <div className="card-value">{stats.loss} <span>/</span> {stats.lossPercent}%</div>
+            <div className="card-label">Losing Deals</div>
+            {/* <div className="card-percent">{stats.lossPercent}%</div> */}
           </div>
         </div>
-        <div className="ai-crypto-w_smart-deals-stats-bar">
-          <div className="ai-crypto-w_smart-deals-stats-win-bar" style={{width: '64%'}}></div>
-          <div className="ai-crypto-w_smart-deals-stats-loss-bar" style={{width: '36%'}}></div>
-        </div>
-        <div className="ai-crypto-w_smart-deals-stats-legend">
-          <div className="ai-crypto-w_smart-deals-stats-win-legend">Winning Deals</div>
-          <div className="ai-crypto-w_smart-deals-stats-loss-legend">Losing Deals</div>
+        <div className="ai-crypto-w_smart-deals-stats-chart">
+          <div className="donut-chart" style={{ 
+            background: `conic-gradient(
+              #22c55e 0% ${stats.winPercent}%, 
+              #ef4444 ${stats.winPercent}% 100%
+            )` 
+          }}>
+            <div className="donut-hole"></div>
+          </div>
+          <div className="ai-crypto-w_smart-deals-stats-chart-legend">
+            <div className="legend-item win">
+              <span className="color-dot"></span>
+              <span>Winning ({stats.winPercent}%)</span>
+            </div>
+            <div className="legend-item loss">
+              <span className="color-dot"></span>
+              <span>Losing ({stats.lossPercent}%)</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -109,7 +171,10 @@ export default function SmartDeals() {
             <Loader />
           </div>
         ) : <>
-            {ordersActive.map(order => (
+            <div className="ai-crypto-w_smart-deals-container-arrow">
+              <DoubleArrow />
+            </div>
+            {ordersActiveFiltered.map(order => (
               <TransactionNotification 
                 key={order.id}
                 pareName={order.pareName}
@@ -123,7 +188,7 @@ export default function SmartDeals() {
                 closePrice={order.closePrice}
               />
             ))}
-            {ordersHistory.map(order => (
+            {ordersHistoryFiltered.map(order => (
               <TransactionNotification 
                 key={order.id}
                 pareName={order.pareName}
